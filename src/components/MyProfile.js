@@ -13,6 +13,12 @@ class MyProfile extends Component {
       name : event.target.value,
     })
   }
+
+  handleGenderChange(event) {
+    this.setState({
+      gender : event.target.value,
+    })
+  }
   render() {
     return (
       <form>
@@ -20,10 +26,10 @@ class MyProfile extends Component {
         <h2>Name</h2>
         <input type="text" placeholder="Your name" onChange={()=>this.handleNameChange(event)} value={this.state.name}></input>
         <h2>Gender</h2>
-        <select>
+        <select onChange={()=>this.handleGenderChange(event)} value={this.state.gender}>
           <option value="" disabled selected hidden>Male</option>
-          <option value="">Male</option>
-          <option value="">Female</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
         </select>
         <h2>Description</h2>
         <textarea cols="50" rows="10">Description about yourself</textarea>
