@@ -13,10 +13,14 @@ class MyProfile extends Component {
       name : event.target.value,
     })
   }
-
   handleGenderChange(event) {
     this.setState({
       gender : event.target.value,
+    })
+  }
+  handleDescriptionChange(event) {
+    this.setState({
+      description : event.target.value,
     })
   }
   render() {
@@ -32,7 +36,7 @@ class MyProfile extends Component {
           <option value="Female">Female</option>
         </select>
         <h2>Description</h2>
-        <textarea cols="50" rows="10">Description about yourself</textarea>
+        <textarea cols="50" rows="10" onChange={()=>this.handleDescriptionChange(event)}>Description about yourself</textarea>
         <input type="checkbox"></input>
         <p>I have read the terms of conduct</p>
         <button type="submit">submit</button>
